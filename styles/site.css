@@ -1,10 +1,21 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --paper: #ffffff;
   --ink: #1f1f1f;
   --muted: #7a7a7a;
   --rule: #e3e3e3;
+  --underline: #bdbdbd;
   --font-body: Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121212;
+    --ink: #e4e4e4;
+    --muted: #8c8c8c;
+    --rule: #2a2a2a;
+    --underline: #555555;
+  }
 }
 
 * {
@@ -43,7 +54,7 @@ p + p {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: #bdbdbd;
+  text-decoration-color: var(--underline);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.3em;
   transition: text-decoration-color 120ms;
