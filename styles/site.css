@@ -1,242 +1,53 @@
-:root {
-  color-scheme: light dark;
-  --paper: #ffffff;
-  --ink: #1f1f1f;
-  --muted: #7a7a7a;
-  --rule: #e3e3e3;
-  --underline: #bdbdbd;
-  --font-body: Consolas, "Liberation Mono", Menlo, monospace;
+/*
+  Capa mínima sobre hack.css: solo maquetación.
+  Colores, letra, títulos, listas y citas son los de hack.css
+  (y dark.css cuando el sistema está en modo oscuro).
+*/
+
+.main {
+  max-width: 52rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #121212;
-    --ink: #e4e4e4;
-    --muted: #8c8c8c;
-    --rule: #2a2a2a;
-    --underline: #555555;
-  }
+.hack p,
+.hack blockquote {
+  max-width: 44rem;
 }
 
-* {
-  box-sizing: border-box;
+.hack .tagline {
+  color: #999;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+.hack h2 {
+  margin-top: 3rem;
 }
 
-body {
+.press time {
+  display: inline-block;
+  min-width: 11ch;
+  color: #999;
+}
+
+.press .source {
+  display: block;
+  padding-left: 12ch;
+  color: #999;
+}
+
+.press li + li {
+  margin-top: 0.75rem;
+}
+
+.hack .footer {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.9;
-  -webkit-font-smoothing: antialiased;
+  color: #999;
 }
 
-::selection {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-h1, h2, h3, p {
-  margin: 0;
-  font-weight: 400;
-}
-
-p + p {
-  margin-top: 1.25em;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--underline);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em;
-  transition: text-decoration-color 120ms;
-}
-
-a:hover {
-  text-decoration-color: currentColor;
-}
-
-a:focus-visible {
-  outline: 1px solid var(--ink);
-  outline-offset: 3px;
-}
-
-.page {
-  width: calc(100% - 2rem);
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 4.5rem 0 3rem;
-}
-
-/* Cabecera */
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--ink);
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
-.intro {
-  padding: 4rem 0 4.5rem;
-}
-
-h1 {
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.6;
-}
-
-.role {
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
-.intro-copy {
-  margin-top: 2.5rem;
-  max-width: 36rem;
-}
-
-/* Secciones en retícula: etiqueta a la izquierda, texto a la derecha */
-
-.profile-section {
-  display: grid;
-  grid-template-columns: 10rem minmax(0, 1fr);
-  gap: 2rem;
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--rule);
-}
-
-.profile-section h2 {
-  font-size: 0.75rem;
-  line-height: 2.5;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
-.section-body {
-  max-width: 36rem;
-}
-
-h3 {
-  margin: 2rem 0 0.5rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-}
-
-.section-body > h3:first-child {
-  margin-top: 0;
-}
-
-/* Medios */
-
-.publications {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.publication {
-  display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px dotted var(--rule);
-}
-
-.publication:first-child {
-  padding-top: 0;
-}
-
-.publication:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.publication time {
-  font-size: 0.75rem;
-  line-height: 2.5;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-
-.publication-title {
-  margin: 0;
-  font-size: 0.9375rem;
-  font-weight: 600;
-}
-
-.publication-source {
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
-.publication-summary {
-  margin-top: 0.25rem;
-  font-size: 0.8125rem;
-  color: var(--muted);
-}
-
-/* Pie */
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--ink);
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
-.footer a {
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 40rem) {
-  .page {
-    padding-top: 2rem;
-  }
-
-  .intro {
-    padding: 3rem 0 3.5rem;
-  }
-
-  .profile-section {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-  }
-
-  .publication {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  a {
-    transition: none;
+@media (max-width: 480px) {
+  .press time,
+  .press .source {
+    display: block;
+    padding-left: 0;
   }
 }
